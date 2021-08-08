@@ -5,7 +5,7 @@ A library for Dart developers.
 A simple usage example:
 
 ```dart
-import 'package:basex/basex.dart';
+import 'package:basex/ninja_basex.dart';
 
 main() {
   var awesome = new Awesome();

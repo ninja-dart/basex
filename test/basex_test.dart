@@ -1,4 +1,4 @@
-import 'package:basex/basex.dart';
+import 'package:ninja_basex/ninja_basex.dart';
 import 'package:test/test.dart';
 
 void main() {
