@@ -1,3 +1,7 @@
+## 1.0.2
+
++ README
+
 ## 1.0.1
 
 + Returned list is now growable
