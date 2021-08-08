@@ -1,6 +1,6 @@
 name: ninja_basex
 description: Convert data to any base (base32, base64, base58, etc) using an alphabet set. Supports disabling padding.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/ninja-dart/basex
 
 environment:

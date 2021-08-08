@@ -37,7 +37,7 @@ List<int> toBaseBytes(Iterable<int> input, int base, {int? padding}) {
   int inputPointer = 0;
   int outputPointer = 0;
 
-  final out = List<int>.filled(count, 0);
+  final out = List<int>.filled(count, 0, growable: true);
   while (inpLength - inputPointer >= inputBlockLength) {
     pack(input.skip(inputPointer).take(inputBlockLength), baseBit, mask, out,
         outputPointer);
