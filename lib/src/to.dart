@@ -1,22 +1,24 @@
 import 'dart:math';
 
+/// Converts given data bytes into base encoded string
 String toBase(Iterable<int> input, String alphabet, {int? padding = 61}) {
-  final bytes = toBaseBytes(input, alphabet.codeUnits.length,
-      padding: padding != null ? -1 : null);
-  return encodeBytes(bytes, alphabet, paddingIn: -1, paddingOut: padding);
+  final bytes = toBaseBytes(input, alphabet.codeUnits.length, padding: padding);
+  return baseBytesToString(bytes, alphabet, padding: padding);
 }
 
-String encodeBytes(List<int> bytes, String alphabet,
-    {int? paddingOut = 61, int? paddingIn = 61}) {
+/// Converts base encoded bytes into base encoded string
+String baseBytesToString(List<int> bytes, String alphabet,
+    {int? padding = 61}) {
   final sb = StringBuffer();
   for (int i = 0; i < bytes.length; i++) {
     final e = bytes[i];
     sb.write(String.fromCharCode(
-        e != paddingIn ? alphabet.codeUnitAt(e) : paddingOut!));
+        padding == null || e != padding ? alphabet.codeUnitAt(e) : padding));
   }
   return sb.toString();
 }
 
+/// Converts given data bytes into base bytes
 List<int> toBaseBytes(Iterable<int> input, int base, {int? padding}) {
   int baseBit = (base - 1).bitLength;
   int mask = (pow(2, baseBit) - 1).toInt();

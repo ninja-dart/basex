@@ -1,3 +1,7 @@
+## 1.0.3
+
++ Added `fromBase` and `fromBaseBytes` to convert from base encoded string and bytes
+
 ## 1.0.2
 
 + README

@@ -1,6 +1,9 @@
 # basex
 
 Convert data to any base (base32, base64, base58, etc) using an alphabet set. Supports disabling padding.
+The advantage of this package is that it allows converting data bytes to base encoded bytes. 
+
+# To base
 
 ```dart
 import 'package:ninja_basex/ninja_basex.dart';
@@ -51,5 +54,19 @@ void main() {
     print(out);
     // => [14, 20, 15, 7, 13, 26, 0, 25, 18, 6, 11, 13, 8, 21, 4, 20, 3, 17, 2, 29, 3, 12, 29, 3, 4, 15, 24, 20, 6, 14, 30, 22]
   }
+}
+```
+
+# From bytes
+
+```dart
+import 'package:ninja_basex/ninja_basex.dart';
+
+void main() {
+  final bytes = fromBase(
+      'RVIHETOST35MQXOPH66OL2WX6IJQQM54FIQMNKTKZOLCFS72OMBK6762BW6U74VB3RCZTE5J6533BE2FZRLJ3M3ZK37ZFW7VVDDBEDPVQICZ4OS3CAWACOTFX6GPTCCR2DOCQ6PET2KQNFNEZGMTQPJVNA',
+      base32Alphabet);
+  print(bytes);
+  print(bytes.map((e) => e.toRadixString(16)).toList());
 }
 ```
